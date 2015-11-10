@@ -45,14 +45,6 @@ public int getPerfil() {
 return opadmin;
 }
 public String confirmaAction() throws IOException {
-    int x = getPerfil();
-    
-    if(x == 1){
-        FacesContext.getCurrentInstance().getExternalContext().dispatch("/admin.xhtml");
-    }
-    else{
-     FacesContext.getCurrentInstance().getExternalContext().dispatch("/cadastro.xhtml");
-    }
     
         return "confirma";
     }
