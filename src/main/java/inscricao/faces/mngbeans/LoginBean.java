@@ -5,9 +5,11 @@
  */
 package inscricao.faces.mngbeans;
 
+import java.io.IOException;
 import java.util.Date;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.faces.context.FacesContext;
 
 /**
  *
@@ -42,8 +44,16 @@ this.opadmin = opadmin;
 public int getPerfil() {
 return opadmin;
 }
-public String confirmaAction() {
-        
+public String confirmaAction() throws IOException {
+    int x = getPerfil();
+    
+    if(x == 1){
+        FacesContext.getCurrentInstance().getExternalContext().dispatch("/admin.xhtml");
+    }
+    else{
+     FacesContext.getCurrentInstance().getExternalContext().dispatch("/cadastro.xhtml");
+    }
+    
         return "confirma";
     }
 }
