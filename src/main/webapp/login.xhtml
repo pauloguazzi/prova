@@ -22,17 +22,17 @@
             <div class="titulo-form">LOGIN</div>
             <h:panelGroup styleClass="form-block" layout="block">
                 <h:outputLabel value="Usuário"  style="display: inline-block; width: 50px"/>
-                <h:inputText id="usuario" required="true"/>
+                <h:inputText id="usuario" required="true" value="#{loginBean.setLogin(usuario)}" />
             </h:panelGroup>
             <h:panelGroup styleClass="form-block" layout="block">
                 <h:outputLabel value="Senha"  style="display: inline-block; width: 50px"/>
-                <h:inputSecret id="senha" required="true"/>
+                <h:inputSecret id="senha" required="true" value="#{loginBean.setSenha(senha)}" />
             </h:panelGroup>
             <h:panelGroup styleClass="form-block" layout="block">
-                <h:selectBooleanCheckbox id="opadmin"/>
+                <h:selectBooleanCheckbox id="opadmin" value="#{loginBean.setPerfil(opadmin)}" />
                 <h:outputText value="Administrador"/>
             </h:panelGroup>
-            <h:commandButton value="Entrar"/>
+            <h:commandButton value="Entrar" action="#{loginBean.confirmaAction()}"/>
             <h:messages/>
         </h:form>
     </ui:define>

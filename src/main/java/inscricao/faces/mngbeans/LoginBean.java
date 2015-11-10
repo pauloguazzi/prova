@@ -5,10 +5,16 @@
  */
 package inscricao.faces.mngbeans;
 
+import java.util.Date;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
+
 /**
  *
  * @author a907413
  */
+@ManagedBean
+@RequestScoped
 public class LoginBean {
     
 private String login;
@@ -36,4 +42,8 @@ this.opadmin = opadmin;
 public int getPerfil() {
 return opadmin;
 }
+public String confirmaAction() {
+        
+        return "confirma";
+    }
 }
